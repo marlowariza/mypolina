@@ -2,19 +2,32 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <tittle>Be my pookie Bear</tittle> //missing link
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <tittle>Polina</tittle>
+        <link rel="stylesheet" href="polina.css">
     </head>
     <body>
-        <div>Will you marry me?</div>
-        <button>
-            Yes
+        <div id="valentineQuestion"><b>will you be my pookie bear?</b></div>
+        <button class="answerButton" onclick="location.href='thankyou.html'">
+            <b>Yes</b>
         </button>
-        <button>
-            No
+        <button class="answerButton" id="noButton">
+            <b>No</b>
         </button>
         <br>
-        // yes or no if yes congrats
-        //you are gay
-        //if no, make button bigger
+        <img src="owlandcrow.gif" alt="that one tiktok" class="responsive"> 
+        <script>
+            document
+                .getElementById("noButton")
+                .addEventListener("click", function(){
+                    var yesButton = document.querySelector(
+                        'button[onclick*="thankyou.html"]'
+                    );
+                    var currentFontSize = parseInt(
+                        window.getComputedStyle(yesButton).fontSize
+                    );
+                    yesButton.style.fontSize = currentFontSize + 10 + "px";
+                });
+        </script>
     </body>
 </html>
